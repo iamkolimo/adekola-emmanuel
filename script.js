@@ -1,0 +1,55 @@
+(function () {
+  // Work-card hover captions
+  document.querySelectorAll('[data-card]').forEach(function (card) {
+    var cap = card.querySelector('[data-cap]');
+    if (!cap) return;
+    var show = function () { cap.style.opacity = '1'; cap.style.transform = 'translateY(0)'; };
+    var hide = function () { cap.style.opacity = '0'; cap.style.transform = 'translateY(8px)'; };
+    card.addEventListener('mouseenter', show);
+    card.addEventListener('mouseleave', hide);
+    card.addEventListener('focusin', show);
+    card.addEventListener('focusout', hide);
+  });
+
+  // Scroll reveals
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduce || !('IntersectionObserver' in window)) return;
+
+  var els = Array.prototype.slice.call(document.querySelectorAll('[data-reveal]'));
+  els.forEach(function (el) {
+    el.style.transition = 'none';
+    if (el.getAttribute('data-reveal') === 'rule') {
+      el.style.transformOrigin = 'left center';
+      el.style.transform = 'scaleX(0)';
+    } else {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(20px)';
+    }
+  });
+
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (!entry.isIntersecting) return;
+      var el = entry.target;
+      var kind = el.getAttribute('data-reveal');
+      var delay = el.getAttribute('data-delay') || '0';
+      requestAnimationFrame(function () {
+        requestAnimationFrame(function () {
+          el.style.transition = kind === 'rule'
+            ? 'transform 400ms ease-out'
+            : 'opacity 500ms ease-out, transform 500ms ease-out';
+          el.style.transitionDelay = delay + 'ms';
+          if (kind === 'rule') {
+            el.style.transform = 'scaleX(1)';
+          } else {
+            el.style.opacity = '1';
+            el.style.transform = 'translateY(0)';
+          }
+        });
+      });
+      io.unobserve(el);
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -4% 0px' });
+
+  els.forEach(function (el) { io.observe(el); });
+})();
