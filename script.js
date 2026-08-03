@@ -14,6 +14,25 @@
     if (img.complete && img.naturalWidth === 0) swap();
   });
 
+  // Click-to-play: the YouTube embed is only created on demand, so the page
+  // costs nothing until someone actually wants the film. Without JS the inner
+  // anchor still opens the video on YouTube.
+  document.querySelectorAll('.watch-frame[data-yt]').forEach(function (frame) {
+    frame.addEventListener('click', function (e) {
+      e.preventDefault();
+      var id = frame.getAttribute('data-yt');
+      if (!id || frame.dataset.playing) return;
+      frame.dataset.playing = '1';
+      var iframe = document.createElement('iframe');
+      iframe.src = 'https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1&rel=0';
+      iframe.title = frame.getAttribute('data-title') || 'Video player';
+      iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+      iframe.setAttribute('allowfullscreen', '');
+      frame.innerHTML = '';
+      frame.appendChild(iframe);
+    });
+  });
+
   // Work-card hover captions
   document.querySelectorAll('[data-card]').forEach(function (card) {
     var cap = card.querySelector('[data-cap]');
