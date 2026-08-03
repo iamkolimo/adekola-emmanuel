@@ -1,4 +1,19 @@
 (function () {
+  // An image whose file is not in place yet degrades to a labelled block
+  // rather than a broken-image icon.
+  document.querySelectorAll('img[data-fallback]').forEach(function (img) {
+    var swap = function () {
+      if (img.dataset.swapped) return;
+      img.dataset.swapped = '1';
+      var ph = document.createElement('div');
+      ph.className = 'media-missing';
+      ph.textContent = img.getAttribute('data-fallback');
+      img.replaceWith(ph);
+    };
+    img.addEventListener('error', swap);
+    if (img.complete && img.naturalWidth === 0) swap();
+  });
+
   // Work-card hover captions
   document.querySelectorAll('[data-card]').forEach(function (card) {
     var cap = card.querySelector('[data-cap]');

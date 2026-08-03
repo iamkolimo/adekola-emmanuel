@@ -288,6 +288,125 @@ main { position: relative; z-index: 1; }
 .cta-link:hover { background: #CDD05B; color: #111111; }
 .cta-rule { margin-top: 36px; height: 4px; background: #CDD05B; }
 
+/* Case study */
+.case-hero { position: relative; }
+.case-hero-media {
+  margin: 0;
+  position: relative;
+  aspect-ratio: 21/10;
+  overflow: hidden;
+  border-bottom: 1px solid #111111;
+}
+.case-hero-media img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.case-hero-body { padding: 72px 48px 96px; }
+.case-kicker { margin: 0 0 24px; font-size: 10px; letter-spacing: 0.3em; font-weight: 600; opacity: 0.6; }
+.case-title {
+  margin: 0;
+  font-size: clamp(48px, 9vw, 132px);
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  line-height: 1.04;
+  text-transform: uppercase;
+}
+.case-standfirst {
+  margin: 28px 0 0;
+  font-size: clamp(17px, 1.6vw, 22px);
+  line-height: 1.55;
+  max-width: 46ch;
+  font-weight: 500;
+}
+.case-facts {
+  margin: 56px 0 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: #111111;
+  border: 1px solid #111111;
+}
+.case-facts > div { background: #F7F6F1; padding: 24px 26px; }
+.case-facts dt { font-size: 10px; letter-spacing: 0.28em; font-weight: 600; opacity: 0.6; }
+.case-facts dd { margin: 8px 0 0; font-size: 15px; font-weight: 500; }
+
+.case-prose { max-width: 68ch; }
+.case-prose p { margin: 0 0 24px; font-size: 16px; line-height: 1.9; color: rgba(17,17,17,0.85); }
+.case-prose p:last-child { margin-bottom: 0; }
+.case-prose .lede {
+  font-size: clamp(18px, 1.7vw, 22px);
+  line-height: 1.7;
+  font-weight: 500;
+  color: #111111;
+  border-left: 3px solid #CDD05B;
+  padding-left: 26px;
+}
+
+.stills {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 32px;
+  row-gap: 64px;
+}
+.still { margin: 0; }
+.still-wide { grid-column: 1 / -1; }
+.still-media { position: relative; aspect-ratio: 16/9; overflow: hidden; }
+.still-media img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.still figcaption {
+  margin-top: 14px;
+  font-size: 12px;
+  line-height: 1.6;
+  letter-spacing: 0.02em;
+  color: rgba(17,17,17,0.68);
+}
+
+.case-next { text-align: left; }
+.case-back { margin: 44px 0 0; }
+.case-back a { font-size: 11px; letter-spacing: 0.25em; font-weight: 600; }
+
+/* Image placeholder shown when a still has not been added yet */
+.media-missing {
+  position: absolute;
+  inset: 0;
+  background: rgba(17,17,17,0.045);
+  border: 1px dashed rgba(17,17,17,0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  box-sizing: border-box;
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  font-weight: 500;
+  opacity: 0.45;
+  text-align: center;
+  line-height: 1.8;
+}
+
+/* Featured work card */
+.work-feature { grid-column: 1 / -1; }
+.work-feature .work-media { aspect-ratio: 21/9; }
+.work-feature .work-meta h3 { font-size: clamp(20px, 2.6vw, 34px); letter-spacing: 0.16em; }
+.work-feature a { display: block; }
+.work-feature a:hover .work-title-row h3 { color: #5A5D20; }
+.work-view {
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
 /* Footer */
 .site-footer { position: relative; z-index: 1; border-top: 1px solid #111111; }
 .footer-inner {
@@ -316,6 +435,10 @@ main { position: relative; z-index: 1; }
   .section-pad, .hero-pad { padding: 88px 32px; }
   .header-inner { padding: 18px 32px; }
   .badge { left: auto; right: 0; top: -48px; }
+  .case-hero-body { padding: 56px 32px 72px; }
+  .case-facts { grid-template-columns: 1fr 1fr; }
+  .case-hero-media { aspect-ratio: 16/10; }
+  .work-feature .work-media { aspect-ratio: 16/10; }
 }
 
 /* Mobile */
@@ -332,4 +455,6 @@ main { position: relative; z-index: 1; }
   .footer-inner { flex-direction: column; align-items: flex-start; gap: 14px; }
   .work-grid { row-gap: 56px; }
   .nav-links { gap: 16px; }
+  .case-title { font-size: 13vw; }
+  .stills { grid-template-columns: 1fr; row-gap: 44px; }
 }

@@ -1,1 +1,4 @@
 .DS_Store
+
+# Raw full-res stills / screenshots kept locally as source, not shipped
+images/Selected/
