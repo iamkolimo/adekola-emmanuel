@@ -172,9 +172,9 @@ main { position: relative; z-index: 1; }
 /* Work */
 .work-grid {
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   column-gap: 32px;
-  row-gap: 96px;
+  row-gap: 56px;
 }
 .work-media { position: relative; overflow: hidden; }
 .work-media img {
@@ -472,13 +472,13 @@ main { position: relative; z-index: 1; }
   line-height: 1.8;
 }
 
-/* Featured work card */
-.work-feature { grid-column: 1 / -1; }
-.work-feature .work-media { aspect-ratio: 21/9; }
+/* Work card — every poster is natively 16:9, so this ratio crops none of them */
+.work-feature .work-media { aspect-ratio: 16/9; }
 /* A UI screenshot is shown whole rather than cropped to the card ratio */
-.work-feature .work-media.is-ui { aspect-ratio: 16/9; background: #EDECE5; }
+.work-feature .work-media.is-ui { background: #EDECE5; }
 .work-media.is-ui img { object-fit: contain; }
-.work-feature .work-meta h3 { font-size: clamp(20px, 2.6vw, 34px); letter-spacing: 0.16em; }
+.work-feature .work-meta { flex-wrap: wrap; gap: 4px 16px; }
+.work-feature .work-meta h3 { font-size: clamp(14px, 1.4vw, 19px); letter-spacing: 0.16em; }
 .work-feature a { display: block; }
 .work-feature a:hover .work-title-row h3 { color: #5A5D20; }
 .work-view {
@@ -509,7 +509,6 @@ main { position: relative; z-index: 1; }
 @media (max-width: 960px) {
   .hero-grid { grid-template-columns: 1fr; gap: 64px; }
   .gridlines { display: none; }
-  .work-card { grid-column: 1 / -1; margin-top: 0; }
   .process-grid { grid-template-columns: 1fr 1fr; }
   .cap-row { grid-template-columns: 56px 1fr; }
   .cap-desc { grid-column: 2; justify-self: start; text-align: left; max-width: none; }
@@ -519,7 +518,7 @@ main { position: relative; z-index: 1; }
   .case-hero-body { padding: 56px 32px 72px; }
   .case-facts { grid-template-columns: 1fr 1fr; }
   .case-hero-media { aspect-ratio: 16/10; }
-  .work-feature .work-media { aspect-ratio: 16/10; }
+  .work-grid { column-gap: 24px; row-gap: 44px; }
 }
 
 /* Mobile */
@@ -534,7 +533,7 @@ main { position: relative; z-index: 1; }
   .section-pad, .hero-pad { padding: 64px 20px; }
   .header-inner { padding: 14px 20px; }
   .footer-inner { flex-direction: column; align-items: flex-start; gap: 14px; }
-  .work-grid { row-gap: 56px; }
+  .work-grid { grid-template-columns: 1fr; row-gap: 40px; }
   .nav-links { gap: 16px; }
   .case-title { font-size: 13vw; }
   .stills { grid-template-columns: 1fr; row-gap: 44px; }
