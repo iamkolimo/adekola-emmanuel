@@ -26,10 +26,12 @@ placeholder block when its file is absent, so a page stays presentable while
 images are still being prepared. `images/ajeside/README.txt` lists the eight
 still filenames that page expects.
 
-## Replacing work images
+## Work entries
 
-The Selected Work grid currently uses styled placeholders. To add real images, drop files into `images/` and replace the `.img-placeholder` div inside each `.work-media` block with:
+Every entry in Selected Work is a real project with its own case study in
+`work/`. Each has an image folder under `images/` with a README describing
+what each file is and how it was generated.
 
-```html
-<img src="images/your-image.jpg" alt="...">
-```
+Full-resolution sources live in `images/Selected/`, which is deliberately
+untracked — those files are ~106 MB of PNG and are source, not web assets.
+Web copies are made with `sips` at 2000px / quality 80-82.
