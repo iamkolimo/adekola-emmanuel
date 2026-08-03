@@ -371,6 +371,61 @@ main { position: relative; z-index: 1; }
   color: rgba(17,17,17,0.68);
 }
 
+/* Product screens — UI is shown whole, never cropped, so the hero and each
+   screen sit contained on a tint rather than filling the frame. */
+.case-hero-media.is-ui { aspect-ratio: 16/9; background: #EDECE5; }
+.case-hero-media.is-ui img { object-fit: contain; }
+
+.screens {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 32px;
+  row-gap: 56px;
+  align-items: start;
+}
+.screen { margin: 0; }
+.screen-wide { grid-column: 1 / -1; }
+.screen-media {
+  aspect-ratio: 16/9;
+  background: rgba(17,17,17,0.04);
+  border: 1px solid #111111;
+  padding: 18px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.screen-tall .screen-media { aspect-ratio: 4/5; }
+.screen-media img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+.screen figcaption {
+  margin-top: 12px;
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  font-weight: 500;
+  opacity: 0.6;
+}
+
+/* Feature list */
+.features { border-top: 1px solid #111111; }
+.feature-row {
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  gap: 8px 24px;
+  padding: 22px 20px;
+  border-bottom: 1px solid #111111;
+  align-items: baseline;
+}
+.feature-row span { font-size: 12px; letter-spacing: 0.2em; font-weight: 500; opacity: 0.55; }
+.feature-row p { margin: 0; font-size: 15px; line-height: 1.6; }
+
 /* Watch — click-to-play facade, so YouTube only loads once asked for */
 .watch-frame {
   position: relative;
@@ -444,6 +499,9 @@ main { position: relative; z-index: 1; }
 /* Featured work card */
 .work-feature { grid-column: 1 / -1; }
 .work-feature .work-media { aspect-ratio: 21/9; }
+/* A UI screenshot is shown whole rather than cropped to the card ratio */
+.work-feature .work-media.is-ui { aspect-ratio: 16/9; background: #EDECE5; }
+.work-media.is-ui img { object-fit: contain; }
 .work-feature .work-meta h3 { font-size: clamp(20px, 2.6vw, 34px); letter-spacing: 0.16em; }
 .work-feature a { display: block; }
 .work-feature a:hover .work-title-row h3 { color: #5A5D20; }
@@ -504,6 +562,8 @@ main { position: relative; z-index: 1; }
   .nav-links { gap: 16px; }
   .case-title { font-size: 13vw; }
   .stills { grid-template-columns: 1fr; row-gap: 44px; }
+  .screens { grid-template-columns: 1fr; row-gap: 40px; }
+  .feature-row { grid-template-columns: 44px 1fr; padding: 18px 0; }
   .watch-play { width: 64px; height: 64px; }
   .watch-play::after { margin-left: 5px; border-left-width: 18px; border-top-width: 11px; border-bottom-width: 11px; }
 }
