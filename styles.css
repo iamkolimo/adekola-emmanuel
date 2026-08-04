@@ -387,7 +387,7 @@ main { position: relative; z-index: 1; }
   color: rgba(17,17,17,0.68);
 }
 
-/* Product screens — UI is shown whole, never cropped, so the hero and each
+/* Product screens · UI is shown whole, never cropped, so the hero and each
    screen sit contained on a tint rather than filling the frame. */
 .case-hero-media.is-ui { aspect-ratio: 16/9; background: #EDECE5; }
 .case-hero-media.is-ui img { object-fit: contain; }
@@ -442,7 +442,7 @@ main { position: relative; z-index: 1; }
 .feature-row span { font-size: 12px; letter-spacing: 0.2em; font-weight: 500; opacity: 0.55; }
 .feature-row p { margin: 0; font-size: 15px; line-height: 1.6; }
 
-/* Watch — click-to-play facade, so YouTube only loads once asked for */
+/* Watch · click-to-play facade, so YouTube only loads once asked for */
 .watch-frame {
   position: relative;
   aspect-ratio: 16/9;
@@ -512,7 +512,7 @@ main { position: relative; z-index: 1; }
   line-height: 1.8;
 }
 
-/* Work card — every poster is natively 16:9, so this ratio crops none of them */
+/* Work card · every poster is natively 16:9, so this ratio crops none of them */
 .work-feature .work-media { aspect-ratio: 16/9; }
 /* A UI screenshot is shown whole rather than cropped to the card ratio */
 .work-feature .work-media.is-ui { background: #EDECE5; }

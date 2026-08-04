@@ -1,7 +1,7 @@
-GíríBooks — product screenshots, web-optimised (q82).
+GíríBooks · product screenshots, web-optimised (q82).
 
-  01-dashboard.jpg  Desktop dashboard — case-study hero
-  02-marketing.jpg  giribooks.com marketing site — work-card poster + OG image
+  01-dashboard.jpg  Desktop dashboard · case-study hero
+  02-marketing.jpg  giribooks.com marketing site · work-card poster + OG image
   03-invoice.jpg    Invoice detail panel
   04-calendar.jpg   Month calendar view
   05-mobile.jpg     Dashboard on a phone (portrait, 1400px tall)

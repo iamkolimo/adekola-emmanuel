@@ -1,8 +1,8 @@
-# Adekola Emmanuel — Portfolio
+# Adekola Emmanuel · Portfolio
 
 Personal portfolio site for Adekola Emmanuel, Creative Director and founder of Kolimo Multimedia (Abuja, Nigeria).
 
-Static site — no build step. `index.html` + `styles.css` + `script.js`.
+Static site · no build step. `index.html` + `styles.css` + `script.js`.
 
 ## Local development
 
@@ -19,7 +19,7 @@ Deployed on Vercel as a static site. Push to `main` or redeploy via the Vercel d
 ## Case studies
 
 Project pages live in `work/`. `work/ajeside.html` is the template to copy for
-a new one — it links back to `index.html#work` and reuses `styles.css`.
+a new one · it links back to `index.html#work` and reuses `styles.css`.
 
 Any `<img>` carrying a `data-fallback="LABEL"` attribute degrades to a labelled
 placeholder block when its file is absent, so a page stays presentable while
@@ -33,5 +33,5 @@ Every entry in Selected Work is a real project with its own case study in
 what each file is and how it was generated.
 
 Full-resolution sources live in `images/Selected/`, which is deliberately
-untracked — those files are ~106 MB of PNG and are source, not web assets.
+untracked · those files are ~106 MB of PNG and are source, not web assets.
 Web copies are made with `sips` at 2000px / quality 80-82.

@@ -1,4 +1,4 @@
-Ajeside film stills — web-optimised JPEGs (2000px long edge, quality 80).
+Ajeside film stills · web-optimised JPEGs (2000px long edge, quality 80).
 
   01-family.jpg          Title card: four generations seated together
   02-matriarch.jpg       Profile of the elderly woman in greenery
@@ -14,7 +14,7 @@ card on the home page and as the Open Graph image, not as the case-study hero
 (which would put the title on screen twice). 04 is the hero.
 
 Regenerated from the full-resolution frames in images/Selected/, which stays
-out of git — those PNGs are ~106 MB and are source, not web assets:
+out of git. Those PNGs are ~106 MB and are source, not web assets:
 
   sips -Z 2000 -s format jpeg -s formatOptions 80 SOURCE.png --out 01-family.jpg
 
