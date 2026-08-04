@@ -59,12 +59,18 @@ main { position: relative; z-index: 1; }
   top: -220px;
   pointer-events: none;
 }
+/* Source order is intro, portrait, bio (so phones read name then photo then
+   bio); on desktop the bio is placed back under the intro in column one. */
 .hero-grid {
   display: grid;
   grid-template-columns: 1.6fr 1fr;
-  gap: 72px;
+  column-gap: 72px;
+  row-gap: 40px;
   align-items: end;
 }
+.hero-intro { grid-column: 1; grid-row: 1; }
+.about-box { grid-column: 1; grid-row: 2; }
+.hero-portrait-col { grid-column: 2; grid-row: 1 / span 2; align-self: end; }
 .hero-location { margin: 0 0 26px; font-size: 10px; letter-spacing: 0.3em; font-weight: 500; opacity: 0.6; }
 .hero-name {
   margin: 0;
@@ -85,7 +91,7 @@ main { position: relative; z-index: 1; }
   max-width: 38ch;
   font-weight: 500;
 }
-.about-box { margin-top: 40px; border: 1px solid #111111; padding: 36px 40px; max-width: 56ch; }
+.about-box { border: 1px solid #111111; padding: 36px 40px; max-width: 56ch; }
 .about-box h2 { margin: 0 0 20px; font-size: 10px; letter-spacing: 0.3em; font-weight: 600; opacity: 0.6; }
 .about-box p { margin: 0 0 16px; font-size: 15px; line-height: 1.85; color: rgba(17,17,17,0.85); }
 .about-box p:last-child { margin-bottom: 0; }
@@ -553,7 +559,9 @@ main { position: relative; z-index: 1; }
 
 /* Tablet */
 @media (max-width: 960px) {
-  .hero-grid { grid-template-columns: 1fr; gap: 64px; }
+  /* Single column: let the source order (name, photo, bio) stand */
+  .hero-grid { grid-template-columns: 1fr; gap: 44px; }
+  .hero-intro, .about-box, .hero-portrait-col { grid-column: 1; grid-row: auto; }
   .gridlines { display: none; }
   .process-grid { grid-template-columns: 1fr 1fr; }
   .cap-row { grid-template-columns: 56px 1fr; }
