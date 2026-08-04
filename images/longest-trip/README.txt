@@ -1,4 +1,4 @@
-The Longest Trip stills. Drop the five frames here with these filenames:
+The Longest Trip stills, web-optimised (2000px long edge, q82).
 
   01-pain.jpg      Gbenga in crisis, head tipped back, hand gripping his shoulder
   02-field.jpg     Wide: two figures sitting in the field under a big sky
@@ -13,6 +13,6 @@ These frames are 2.39:1 scope, not 16:9, so they use .still-scope and
 letterboxes on black via .watch-frame.is-scope because the YouTube embed
 itself stays 16:9.
 
-Until the files exist each one renders as a labelled placeholder rather
-than a broken image. Suggested export:
-  sips -Z 2000 -s format jpeg -s formatOptions 80 SOURCE.png --out 01-pain.jpg
+Sources are 'Longest trip 1-5.JPG' in images/Selected/ (4096x1716 each),
+in that same order. Regenerate with:
+  sips -Z 2000 -s format jpeg -s formatOptions 82 SOURCE.JPG --out 01-pain.jpg
