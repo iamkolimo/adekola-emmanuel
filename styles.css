@@ -371,6 +371,8 @@ main { position: relative; z-index: 1; }
 .still { margin: 0; }
 .still-wide { grid-column: 1 / -1; }
 .still-media { position: relative; aspect-ratio: 16/9; overflow: hidden; }
+/* Scope frames (2.39:1) keep their own ratio so the composition is not cropped */
+.still-scope .still-media { aspect-ratio: 2.39/1; }
 .still-media img {
   position: absolute;
   inset: 0;
@@ -390,6 +392,7 @@ main { position: relative; z-index: 1; }
 /* Product screens · UI is shown whole, never cropped, so the hero and each
    screen sit contained on a tint rather than filling the frame. */
 .case-hero-media.is-ui { aspect-ratio: 16/9; background: #EDECE5; }
+.case-hero-media.is-scope { aspect-ratio: 2.39/1; }
 .case-hero-media.is-ui img { object-fit: contain; }
 
 .screens {
@@ -461,6 +464,9 @@ main { position: relative; z-index: 1; }
   transition: opacity 160ms ease-out, transform 400ms ease-out;
 }
 .watch-link:hover img { opacity: 0.88; transform: scale(1.015); }
+/* The player stays 16:9 for YouTube; a scope poster letterboxes on the black */
+.watch-frame.is-scope img { object-fit: contain; }
+.watch-frame.is-scope .watch-link:hover img { transform: none; }
 .watch-play {
   position: absolute;
   left: 50%;
