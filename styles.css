@@ -95,6 +95,21 @@ main { position: relative; z-index: 1; }
 .about-box h2 { margin: 0 0 20px; font-size: 10px; letter-spacing: 0.3em; font-weight: 600; opacity: 0.6; }
 .about-box p { margin: 0 0 16px; font-size: 15px; line-height: 1.85; color: rgba(17,17,17,0.85); }
 .about-box p:last-child { margin-bottom: 0; }
+/* Links sitting inside prose or a fact row need to read as links, since the
+   site's default anchor style carries no underline. */
+.about-box a,
+.case-facts dd a,
+.contact-value a {
+  text-decoration: underline;
+  text-decoration-color: #CDD05B;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+  transition: background 120ms ease-out;
+}
+.about-box a:hover,
+.case-facts dd a:hover,
+.contact-value a:hover { background: #CDD05B; color: #111111; }
+
 .about-meta {
   margin-top: 22px !important;
   padding-top: 18px;
