@@ -369,6 +369,9 @@ main { position: relative; z-index: 1; }
 }
 .case-facts > div { background: #F7F6F1; padding: 24px 26px; }
 .case-facts dt { font-size: 10px; letter-spacing: 0.28em; font-weight: 600; opacity: 0.6; }
+/* A headline credit (an award) spans the whole fact strip rather than
+   sitting alone in a fifth cell. */
+.case-facts .fact-wide { grid-column: 1 / -1; background: #CDD05B; }
 .case-facts dd { margin: 8px 0 0; font-size: 15px; font-weight: 500; }
 
 .case-prose { max-width: 68ch; }
